@@ -1,7 +1,7 @@
-##Tabela SAC - 15/09/2020
+##Tabela SAC 
 
 ################
-# Montar uma função que consiga construir uma planilha de amortização
+# Desenvolver uma função que consiga construir uma planilha de amortização
 # conforme o Sistema de Amortização Constante (SAC). Após montar, calcule 
 #a planilha para o caso de um financiamento no valor de R$ 775000 que deverá 
 # ser pago em 48 meses à taxa anual de 21%
@@ -61,7 +61,7 @@ SAC <- function(P, n, i){
   resultado <- rbind(resultado, soma)
   
   
-  #automatização nomeação das linhas para qualquer n
+  #Automatização nomeação das linhas para qualquer n
   
   for (w in 0:c){
     
@@ -87,11 +87,10 @@ SAC <- function(P, n, i){
   
 }
 
-
 #Os termos da função geral são: 
-#P: valor financiado
-#n: número de meses de pagamento
-#i: taxa de juros efetiva
+#P: valor de interesse financiado
+#n: número de meses de pagamento do financiamento
+#i: taxa de juros anual efetiva
 
 
 #Função SAC(P, n, i)
