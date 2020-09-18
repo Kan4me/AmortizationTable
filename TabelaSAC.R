@@ -54,7 +54,7 @@ SAC <- function(P, n, i){
   svA <- sum(vA) #Soma da amotização
   svJ <- sum (vJ) #Soma dos juros
   
-  soma <- cbind(svJ, svA, svR, 0) #O 0 no final desse comando corresponde
+  soma <- cbind(svR, svA, svJ, 0) #O 0 no final desse comando corresponde
   #a quitação do financiamento 
   
   resultado <- cbind(vR, vA, vJ, vSD)
