@@ -1,3 +1,12 @@
+##Tabela PRICE 
+
+################
+# Desenvolver uma função que consiga construir uma planilha de amortização
+# conforme o Sistema Francês de Amortização (PRICE). Após montar, calcule 
+#a planilha para o caso de um financiamento no valor de R$ 1000 que deverá 
+# ser pago em 4 meses à taxa anual de 42,576%
+
+
 # Montando a função geral
 
 PRICE <- function(P, n, i){
@@ -28,10 +37,10 @@ PRICE <- function(P, n, i){
     vSD[t] <- vSD[t-1] - vAmort[t] #Saldo devedor
     
   }
+
   
   #Valores do último mês do financiamento
   
-
   vJ[n+1] <- vSD[n] * ie #Juros do período
   
   vAmort[n+1] <- vPMT[n+1] - vJ[n+1] #Valor da amortização  do último mês do financiamento
