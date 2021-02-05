@@ -6,6 +6,11 @@
 #a planilha para o caso de um financiamento no valor de R$ 1000 que deverá 
 # ser pago em 4 meses à taxa anual de 42,576%
 
+#ATT: comandos para exportar a tabela gerada em XLSX, seja em uma pasta
+#local ou no RStudio Cloud, conforme o PATH de interesse.
+
+install.packages("xlsx")
+library("xlsx")
 
 # Montando a função geral
 
@@ -80,6 +85,9 @@ PRICE <- function(P, n, i){
                            'Juros', 'Saldo Devedor')
   
   row.names(resultado) <- vMes
+  
+  #write.xlsx(matrix or df,'/PATH/NameFile.xlsx')
+  write.xlsx(resultado,'/cloud/project/TabelaPRICE.xlsx')
   
   return(resultado)
   
