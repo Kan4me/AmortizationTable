@@ -6,6 +6,11 @@
 #a planilha para o caso de um financiamento no valor de R$ 775000 que deverá 
 # ser pago em 48 meses à taxa anual de 21%
 
+#ATT: comandos para exportar a tabela gerada em XLSX, seja em uma pasta
+#local ou no RStudio Cloud, conforme o PATH de interesse.
+
+install.packages("xlsx")
+library("xlsx")
 
 # Montando a função geral
 
@@ -82,6 +87,9 @@ SAC <- function(P, n, i){
                            'Juros', 'Saldo Devedor')
   
   row.names(resultado) <- vP
+  
+  #write.xlsx(matrix or df,'/PATH/NameFile.xlsx')
+  write.xlsx(resultado,'/cloud/project/TabelaPRICE.xlsx')
   
   return(resultado)
   
