@@ -6,6 +6,7 @@ Automatização do cálculo de Amortização de Dívida utilizando R conforme as
 * Sistema Francês de Amortização - PRICE
 
 Informações necessárias para realizar os cálculos:
+
 * Taxa de juros, mensal ou anual
 * Valor financiado
 * Quantidade de meses do financiamento 
