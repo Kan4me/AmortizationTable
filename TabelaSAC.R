@@ -14,9 +14,15 @@ library("xlsx")
 
 # Montando a função geral
 
-SAC <- function(P, n, i){
-  
+SAC <- function(P, n, i, type_i){
+  if (type_i == month) {
+  ie = i
+  } else if (type_i == year) {
   ie <- ((1+i)^(1/12))-1 #Juros equivalente mensal
+  } else {
+  print("Tipo de taxa de juros inválida. Tente novamente")
+  break
+  }
   
   A <- P/n #Valor da amortização
   
@@ -89,7 +95,7 @@ SAC <- function(P, n, i){
   row.names(resultado) <- vP
   
   #write.xlsx(matrix or df,'/PATH/NameFile.xlsx')
-  write.xlsx(resultado,'/cloud/project/TabelaPRICE.xlsx')
+  write.xlsx(resultado,'/[PATH_OF_INTEREST]/TabelaPRICE.xlsx')
   
   return(resultado)
   
@@ -103,7 +109,7 @@ SAC <- function(P, n, i){
 
 #Função SAC(P, n, i)
 
-SAC(775000, 48, 0.21)
+SAC(775000, 48, 0.21, year)
 
-SAC(1720000, 50, 0.142857)
+SAC(1720000, 50, 0.142857, year)
 

@@ -15,10 +15,9 @@ library("xlsx")
 # Montando a função geral
 
 PRICE <- function(P, n, i, type_i){
-
-  if (type_i == m) {
+  if (type_i == month) {
   ie = i
-  } else if (type_i == y) {
+  } else if (type_i == year) {
   ie <- ((1+i)^(1/12))-1 #Juros equivalente mensal
   } else {
   print("Tipo de taxa de juros inválida. Tente novamente")
@@ -108,6 +107,6 @@ PRICE <- function(P, n, i, type_i){
 
 #Função PRICE(P, n, i)
 
-PRICE(1000, 4, 0.42576)
+PRICE(1000, 4, 0.42576, year)
 
-PRICE(775000, 48, 0.21)
+PRICE(775000, 48, 0.21, year)
