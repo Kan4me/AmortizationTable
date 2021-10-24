@@ -14,10 +14,17 @@ library("xlsx")
 
 # Montando a função geral
 
-PRICE <- function(P, n, i){
-  
+PRICE <- function(P, n, i, type_i){
+
+  if (type_i == m) {
+  ie = i
+  } else if (type_i == y) {
   ie <- ((1+i)^(1/12))-1 #Juros equivalente mensal
-  
+  } else {
+  print("Tipo de taxa de juros inválida. Tente novamente")
+  break
+  }
+
   PMT <- P*((((1+ie)^n)*ie)/(((1+ie)^n)-1)) #Valor da prestação
   
   c <- n+2 #automatização nomeação das linhas
@@ -87,7 +94,7 @@ PRICE <- function(P, n, i){
   row.names(resultado) <- vMes
   
   #write.xlsx(matrix or df,'/PATH/NameFile.xlsx')
-  write.xlsx(resultado,'/cloud/project/TabelaPRICE.xlsx')
+  write.xlsx(resultado,'/[PATH_OF_INTEREST]/TabelaPRICE.xlsx')
   
   return(resultado)
   
